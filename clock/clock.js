@@ -10,6 +10,7 @@ let iconOMORI = document.querySelector(".icon");
 let intervalLocal;
 let intervalUTC;
 
+
 // clock for Local
 function timeLocal() {
     document.body.removeAttribute("onload");
@@ -41,48 +42,13 @@ function timeLocal() {
     clearInterval(intervalUTC);
 
     iconOMORI.style.backgroundImage = "url(img/sunny-violin.gif)";
-    UTCMode.innerHTML = "Switch to UTC";
+    UTCMode.innerHTML = "UTC/GMT mode";
     UTCMode.removeAttribute("onclick");
     UTCMode.setAttribute("onclick", "timeUTC()");
     date.innerHTML = d.toDateString();
 
-    if (d.getMonth() === 0 && d.getDate() === 1) {
-        birthDay.innerHTML = "🎂 " + "Hero\'s Birthday";
-        birthDay.classList.add("hero");
-        setTimeout(() => {
-            birthDay.classList.remove("hero");
-        }, 86400000);
-    } else if (d.getMonth() === 1 && d.getDate() === 18) {
-        birthDay.innerHTML = "🎂 " + "Basil\'s Birthday";
-        birthDay.classList.add("basil");
-        setTimeout(() => {
-            birthDay.classList.remove("basil");
-        }, 86400000);
-    } else if (d.getMonth() === 2 && d.getDate() === 1) {
-        birthDay.innerHTML = "🎂 " + "Mari\'s Birthday";
-        birthDay.classList.add("mari");
-        setTimeout(() => {
-            birthDay.classList.remove("mari");
-        }, 86400000);
-    } else if (d.getMonth() === 4 && d.getDate() === 23) {
-        birthDay.innerHTML = "🎂 " + "Aubrey\'s Birthday";
-        birthDay.classList.add("aubrey");
-        setTimeout(() => {
-            birthDay.classList.remove("aubrey");
-        }, 86400000);
-    } else if (d.getMonth() === 6 && d.getDate() === 20) {
-        birthDay.innerHTML = "🎂 " + "Sunny\'s Birthday";
-        birthDay.classList.add("sunny");
-        setTimeout(() => {
-            birthDay.classList.remove("sunny");
-        }, 86400000);
-    } else if (d.getMonth() === 10 && d.getDate() === 11) {
-        birthDay.innerHTML = "🎂 " + "Kel\'s Birthday";
-        birthDay.classList.add("kel");
-        setTimeout(() => {
-            birthDay.classList.remove("kel");
-        }, 86400000);
-    }
+
+    LocalBirthday(d);
 }
 
 //clock for Universal
@@ -110,11 +76,95 @@ function timeUTC() {
     clearInterval(intervalLocal);
 
     iconOMORI.style.backgroundImage = "url(img/omori-violin.gif)";
-    UTCMode.innerHTML = "Switch to Local";
+    UTCMode.innerHTML = "LocalTime mode";
     UTCMode.removeAttribute("onclick");
     UTCMode.setAttribute("onclick", "timeLocal()");
     date.innerHTML = d.toDateString();
 
+    UTCBirthday(d);
+}
+
+
+// pause play for audio
+let musik = document.getElementsByTagName('audio')[0];
+let togglePlayPause = document.querySelector(".note");
+let isPlayToggled = true;
+
+
+togglePlayPause.addEventListener('click', function() {
+
+    if (isPlayToggled === true) {
+        musik.play();
+        isPlayToggled = false;
+        return
+    }
+
+    if (isPlayToggled === false) {
+        musik.pause();
+        isPlayToggled = true;
+        return
+    }
+})
+
+// function playAudio() {
+
+//     musik.play();
+//     togglePlayPause.removeAttribute("onclick");
+//     togglePlayPause.setAttribute("onclick", "pauseAudio()")
+// }
+
+// function pauseAudio() {
+
+//     musik.pause();
+//     togglePlayPause.removeAttribute("onclick");
+//     togglePlayPause.setAttribute("onclick", "playAudio()")
+// }
+
+
+//a functions consists of conditions where if the current day is a certain character's birthday 
+
+function LocalBirthday(d) {
+    //TODO: export these ifs and import on a separate function
+    if (d.getMonth() === 0 && d.getDate() === 1) {
+        birthDay.innerHTML = "🎂 " + "Hero\'s Birthday";
+        birthDay.classList.add("hero");
+        setTimeout(() => {
+            birthDay.classList.remove("hero");
+        }, 86400000);
+    } else if (d.getMonth() === 1 && d.getDate() === 18) {
+        birthDay.innerHTML = "🎂 " + "Basil\'s Birthday";
+        birthDay.classList.add("basil");
+        setTimeout(() => {
+            birthDay.classList.remove("basil");
+        }, 86400000);
+    } else if (d.getMonth() === 2 && d.getDate() === 29) {
+        birthDay.innerHTML = "🎂 " + "Mari\'s Birthday";
+        birthDay.classList.add("mari");
+        setTimeout(() => {
+            birthDay.classList.remove("mari");
+        }, 86400000);
+    } else if (d.getMonth() === 4 && d.getDate() === 29) {
+        birthDay.innerHTML = "🎂 " + "Aubrey\'s Birthday";
+        birthDay.classList.add("aubrey");
+        setTimeout(() => {
+            birthDay.classList.remove("aubrey");
+        }, 86400000);
+    } else if (d.getMonth() === 6 && d.getDate() === 20) {
+        birthDay.innerHTML = "🎂 " + "Sunny\'s Birthday";
+        birthDay.classList.add("sunny");
+        setTimeout(() => {
+            birthDay.classList.remove("sunny");
+        }, 86400000);
+    } else if (d.getMonth() === 10 && d.getDate() === 11) {
+        birthDay.innerHTML = "🎂 " + "Kel\'s Birthday";
+        birthDay.classList.add("kel");
+        setTimeout(() => {
+            birthDay.classList.remove("kel");
+        }, 86400000);
+    }
+}
+
+function UTCBirthday(d) {
     if (d.getUTCMonth() === 0 && d.getUTCDate() === 1) {
         birthDay.innerHTML = "🎂 " + "Hero\'s Birthday";
         birthDay.classList.add("hero");
@@ -150,26 +200,7 @@ function timeUTC() {
         birthDay.classList.add("kel");
         setTimeout(() => {
             birthDay.classList.remove("kel");
-        }, 86400000);
+        }, 86400000)
+
     }
-
-}
-
-// pause play for audio
-function playAudio() {
-    let musik = document.getElementsByTagName('audio')[0];
-    let togglePlayPause = document.querySelector(".note");
-
-    musik.play();
-    togglePlayPause.removeAttribute("onclick");
-    togglePlayPause.setAttribute("onclick", "pauseAudio()")
-}
-
-function pauseAudio() {
-    let musik = document.getElementsByTagName('audio')[0];
-    let togglePlayPause = document.querySelector(".note");
-
-    musik.pause();
-    togglePlayPause.removeAttribute("onclick");
-    togglePlayPause.setAttribute("onclick", "playAudio()")
 }
