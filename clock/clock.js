@@ -124,7 +124,7 @@ togglePlayPause.addEventListener('click', function() {
 //a functions consists of conditions where if the current day is a certain character's birthday 
 
 function LocalBirthday(d) {
-    //TODO: export these ifs and import on a separate function
+    //TODO: export these ifs and import on a separate function   (done)
     if (d.getMonth() === 0 && d.getDate() === 1) {
         birthDay.innerHTML = "🎂 " + "Hero\'s Birthday";
         birthDay.classList.add("hero");
@@ -137,7 +137,7 @@ function LocalBirthday(d) {
         setTimeout(() => {
             birthDay.classList.remove("basil");
         }, 86400000);
-    } else if (d.getMonth() === 2 && d.getDate() === 29) {
+    } else if (d.getMonth() === 2 && d.getDate() === 1) {
         birthDay.innerHTML = "🎂 " + "Mari\'s Birthday";
         birthDay.classList.add("mari");
         setTimeout(() => {
