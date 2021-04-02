@@ -124,83 +124,67 @@ togglePlayPause.addEventListener('click', function() {
 //a functions consists of conditions where if the current day is a certain character's birthday 
 
 function LocalBirthday(d) {
-    //TODO: export these ifs and import on a separate function   (done)
-    if (d.getMonth() === 0 && d.getDate() === 1) {
-        birthDay.innerHTML = "🎂 " + "Hero\'s Birthday";
-        birthDay.classList.add("hero");
-        setTimeout(() => {
-            birthDay.classList.remove("hero");
-        }, 86400000);
-    } else if (d.getMonth() === 1 && d.getDate() === 18) {
-        birthDay.innerHTML = "🎂 " + "Basil\'s Birthday";
-        birthDay.classList.add("basil");
-        setTimeout(() => {
-            birthDay.classList.remove("basil");
-        }, 86400000);
-    } else if (d.getMonth() === 2 && d.getDate() === 1) {
-        birthDay.innerHTML = "🎂 " + "Mari\'s Birthday";
-        birthDay.classList.add("mari");
-        setTimeout(() => {
-            birthDay.classList.remove("mari");
-        }, 86400000);
-    } else if (d.getMonth() === 4 && d.getDate() === 29) {
-        birthDay.innerHTML = "🎂 " + "Aubrey\'s Birthday";
-        birthDay.classList.add("aubrey");
-        setTimeout(() => {
-            birthDay.classList.remove("aubrey");
-        }, 86400000);
-    } else if (d.getMonth() === 6 && d.getDate() === 20) {
-        birthDay.innerHTML = "🎂 " + "Sunny\'s Birthday";
-        birthDay.classList.add("sunny");
-        setTimeout(() => {
-            birthDay.classList.remove("sunny");
-        }, 86400000);
-    } else if (d.getMonth() === 10 && d.getDate() === 11) {
-        birthDay.innerHTML = "🎂 " + "Kel\'s Birthday";
-        birthDay.classList.add("kel");
-        setTimeout(() => {
-            birthDay.classList.remove("kel");
-        }, 86400000);
+    //TODO: refactor(done)
+
+    let milliSec = 24 * 60 * 60 * 1000;
+
+    const clearClassName = (name) => {
+        birthDay.classList.remove(name)
     }
+
+    let name;
+    const month = d.getMonth(),
+        date = d.getDate();
+
+    if (month === 0 && date === 1) {
+        name = "hero"
+    } else if (month === 1 && date === 18) {
+        name = "basil"
+    } else if (month === 2 && date === 1) {
+        name = "mari"
+    } else if (month === 4 && date === 23) {
+        name = "aubrey"
+    } else if (month === 6 && date === 20) {
+        name = "sunny"
+    } else if (month === 10 && date === 11) {
+        name = "kel"
+    }
+
+    const capitalizedName = name.slice(0, 1).toUpperCase() + name.slice(1);
+
+    birthDay.textContent = `🎂 ${capitalizedName}'s birthday`
+    birthDay.classList.add(name);
+    setTimeout(clearClassName, milliSec, name);
 }
 
 function UTCBirthday(d) {
-    if (d.getUTCMonth() === 0 && d.getUTCDate() === 1) {
-        birthDay.innerHTML = "🎂 " + "Hero\'s Birthday";
-        birthDay.classList.add("hero");
-        setTimeout(() => {
-            birthDay.classList.remove("hero");
-        }, 86400000);
-    } else if (d.getUTCMonth() === 1 && d.getUTCDate() === 18) {
-        birthDay.innerHTML = "🎂 " + "Basil\'s Birthday";
-        birthDay.classList.add("basil");
-        setTimeout(() => {
-            birthDay.classList.remove("basil");
-        }, 86400000);
-    } else if (d.getUTCMonth() === 2 && d.getUTCDate() === 1) {
-        birthDay.innerHTML = "🎂 " + "Mari\'s Birthday";
-        birthDay.classList.add("mari");
-        setTimeout(() => {
-            birthDay.classList.remove("mari");
-        }, 86400000);
-    } else if (d.getUTCMonth() === 4 && d.getUTCDate() === 23) {
-        birthDay.innerHTML = "🎂 " + "Aubrey\'s Birthday";
-        birthDay.classList.add("aubrey");
-        setTimeout(() => {
-            birthDay.classList.remove("aubrey");
-        }, 86400000);
-    } else if (d.getUTCMonth() === 6 && d.getUTCDate() === 20) {
-        birthDay.innerHTML = "🎂 " + "Sunny\'s Birthday";
-        birthDay.classList.add("sunny");
-        setTimeout(() => {
-            birthDay.classList.remove("sunny");
-        }, 86400000);
-    } else if (d.getUTCMonth() === 10 && d.getUTCDate() === 11) {
-        birthDay.innerHTML = "🎂 " + "Kel\'s Birthday";
-        birthDay.classList.add("kel");
-        setTimeout(() => {
-            birthDay.classList.remove("kel");
-        }, 86400000)
+    let milliSec = 24 * 60 * 60 * 1000;
 
+    const clearClassName = (name) => {
+        birthDay.classList.remove(name)
     }
+
+    let name;
+    const month = d.getUTCMonth(),
+        date = d.getUTCDate();
+
+    if (month === 0 && date === 1) {
+        name = "hero"
+    } else if (month === 1 && date === 18) {
+        name = "basil"
+    } else if (month === 2 && date === 1) {
+        name = "mari"
+    } else if (month === 4 && date === 23) {
+        name = "aubrey"
+    } else if (month === 6 && date === 20) {
+        name = "sunny"
+    } else if (month === 10 && date === 11) {
+        name = "kel"
+    }
+
+    const capitalizedName = name.slice(0, 1).toUpperCase() + name.slice(1);
+
+    birthDay.textContent = `🎂 ${capitalizedName}'s birthday`
+    birthDay.classList.add(name);
+    setTimeout(clearClassName, milliSec, name);
 }
