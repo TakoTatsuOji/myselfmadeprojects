@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeannie's RTW Shop</title>
+    <link rel="icon" href="img/ukay-logo-png.png">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+    </script>
+
+    <!--font awesome-->
+    <script src="https://kit.fontawesome.com/9e357cf725.js" crossorigin="anonymous"></script>
+    <!-- css file/s -->
+    <link rel="stylesheet" href="css/resetstylesheet.css">
+    <link rel="stylesheet" href="css/ukay.css">
+    <!-- js file/s-->
+    <script src="js/intersectionObserver.js" defer></script>
+    <script src="js/expandMenu.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+    <script src="js/dragSlider.js" defer></script>
+    <script src="js/clickToView.js" defer></script>
+    <noscript>
+    Please, enable your Javascript in your browser
+    </noscript>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="img/ukay-logo-png.png" alt="Jeannie's RTW Shop logo" width="50" height="50">
+                <div class="logo-title">
+                    <h2 class="title">JEANNIE'S</h2>
+                    <h2><b class="r">R</b><b class="t">T</b><b class="w">W</b> SHOP</h2>
+                </div>
+            </div>
+            <div class="expand-menu-container">
+                <i id="btn-menu-expand" class="fas fa-bars fa-2x" aria-label="menu-expand" aria-expanded="false" aria-controls="links"></i>
+                <ul id="links" class="links" aria-labelledby="btn-menu-expand">
+                    <div class="menu-logo">
+                        <img src="img/ukay-logo-png.png" alt="Jeannie's RTW Shop logo" width="200" height="200" title="Jeannie's RTW Shop">
+                    </div>
+                    <li class="link" id="link1">
+                        <a href="#sale">What I offer for sale?</a>
+                    </li>
+                    <li class="link" id="link2">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="link" id="link3">
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <i id="btn-menu-close" class="fas fa-times" aria-label="menu-close"></i>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="image-container desktop-grid">
+        <div>
+            <img class="active" src="img/main/main.jpg" alt="girl with scattered pile of clothes around">
+            <img src="img/main/main2.jpg" alt="piling of clothes on a clothes rack">
+            <img src="img/main/main3.jpg" alt="girl circled with household items around">
+            <img src="img/main/main4.jpg" alt="packed items">
+            <img src="img/main/main5.jpg" alt="display of household items for retail in such variety">
+            <img src="img/main/main6.jpg" alt="another packed items">
+            <img src="img/main/main7.jpg" alt="display of available items for retail">
+            <img src="img/main/main8.jpg" alt="pile of household items and bags">
+        </div>
+        <div id="business-title-container">
+            <h1>
+                <b>J</b>eannie's
+            </h1>
+            <h3><b style="color:#00cccc">R</b><b style="color:#008080">T</b><b style="color:#c9a0dc">W</b> Shop</h3>
+        </div>
+    </div>
+    <div class="clothes-pile" style="width: 100%; margin: 1.875rem 0">
+        <img src="img/clothes-pile.png" alt="pile of clothes" style="max-width: 100%;">
+    </div>
+    <main style="margin-top: 3.125rem;">
+        <div class="container-lg">
+            <article id="sale">
+                <h2 class="reference-link slide-in from-left">WHAT I OFFER FOR SALE?</h2>
+                <p>This shop offers the following: &#40;Press and hold to drag&#41;</p>
+                <section class="household">
+                    <h3 class="slide-in from-right">HOUSEHOLD</h3>
+                    <a class="click-to-view"><i class="fas fa-camera-retro"></i> Click here to expand</a>
+                    <div class="draggable-imgs">
+                        <img loading="lazy" src="img/hhr/household1.jpg" alt="household image 1">
+                        <img loading="lazy" src="img/hhr/household2.jpg" alt="household image 2">
+                        <img loading="lazy" src="img/hhr/household3.jpg" alt="household image 3">
+                        <img loading="lazy" src="img/hhr/household4.jpg" alt="household image 4">
+                    </div>
+                </section>
+                <section class="household">
+                    <h3 class="slide-in from-left">CLOTHES</h3>
+                    <a class="click-to-view"><i class="fas fa-camera-retro"></i> Click here to expand</a>
+                    <div class="draggable-imgs">
+                        <img loading="lazy" src="img/clothes/clothes1.jpg" alt="clothes image 1">
+                        <img loading="lazy" src="img/clothes/clothes2.jpg" alt="clothes image 2">
+                        <img loading="lazy" src="img/clothes/clothes3.jpg" alt="clothes image 3">
+                        <img loading="lazy" src="img/clothes/clothes4.jpg" alt="clothes image 4">
+                    </div>
+                </section>
+                <section class="household">
+                    <h3 class="slide-in from-right">BEDSHEETS</h3>
+                    <a class="click-to-view"><i class="fas fa-camera-retro"></i> Click here to expand</a>
+                    <div class="draggable-imgs">
+                        <img loading="lazy" src="img/bedsheets/bedsheet1.jpg" alt="bedsheet image 1">
+                        <img loading="lazy" src="img/bedsheets/bedsheet2.jpg" alt="bedsheet image 2">
+                        <img loading="lazy" src="img/bedsheets/bedsheet3.jpg" alt="bedsheet image 3">
+                        <img loading="lazy" src="img/bedsheets/bedsheet4.jpg" alt="bedsheet image 4">
+                    </div>
+                </section>
+                <section class="household">
+                    <h3 class="slide-in from-left">CURTAINS</h3>
+                    <a class="click-to-view"><i class="fas fa-camera-retro"></i> Click here to expand</a>
+                    <div class="draggable-imgs">
+                        <img loading="lazy" src="img/curtain/curtain1.jpg" alt="curtain image 1">
+                        <img loading="lazy" src="img/curtain/curtain2.jpg" alt="curtain image 2">
+                        <img loading="lazy" src="img/curtain/curtain3.jpg" alt="curtain image 3">
+                        <img loading="lazy" src="img/curtain/curtain4.jpg" alt="curtain image 4">
+                    </div>
+                </section>
+                <section class="household">
+                    <h3 class="slide-in from-right">PILLOW CASES</h3>
+                    <a class="click-to-view"><i class="fas fa-camera-retro"></i> Click here to expand</a>
+                    <div class="draggable-imgs">
+                        <img loading="lazy" src="img/pillowcase/pillowcase1.jpg" alt="pillowcase image 1">
+                        <img loading="lazy" src="img/pillowcase/pillowcase2.jpg" alt="pillowcase image 2">
+                        <img loading="lazy" src="img/pillowcase/pillowcase3.jpg" alt="pillowcase image 3">
+                        <img loading="lazy" src="img/pillowcase/pillowcase4.jpg" alt="pillowcase image 4">
+                    </div>
+                </section>
+                <section class="household">
+                    <h3 class="slide-in from-left">BAGS</h3>
+                    <a class="click-to-view"><i class="fas fa-camera-retro"></i> Click here to expand</a>
+                    <div class="draggable-imgs">
+                        <img loading="lazy" src="img/bags/bag1.jpg" alt="bag image 1">
+                        <img loading="lazy" src="img/bags/bag2.jpg" alt="bag image 2">
+                        <img loading="lazy" src="img/bags/bag3.jpg" alt="bag image 3">
+                        <img loading="lazy" src="img/bags/bag4.jpg" alt="bag image 4">
+                    </div>
+                </section>
+            </article>
+        </div>
+        <article id="about">
+            <h2 class="reference-link slide-in from-right">ABOUT</h2>
+            <section>
+                <p>Jeannie's RTW Shop is a shop where I sell: Bundles, Household Rummage, Clothes, Curtain, Bags, Bedsheets/Comforter, and Pillowcases.</p>
+            </section>
+        </article>
+    </main>
+    <div class="display-img-container">
+        <button id="display-img-close" aria-label="close"><i class="fas fa-times"></i></button>
+        <img class="display-img active-display" src="" alt="">
+        <img class="display-img" src="" alt="">
+        <img class="display-img" src="" alt="">
+        <img class="display-img" src="" alt="">
+        <button id="prev" aria-label="previous button"><i class="fas fa-angle-left"></i></button>
+        <button id="next" aria-label="next button"><i class="fas fa-angle-right"></i></button>
+    </div>
+    <footer id="contact">
+        <h2 class="reference-link slide-in from-right" style="max-width: 500px; margin: 1.5rem auto;">CONTACTS</h2>
+        <section>
+            <a href="https://www.facebook.com/jeannie.acuar.3" target="_blank"><i class="fab fa-facebook fa-2x"></i> Facebook Profile</a>
+            <a href="https://www.facebook.com/Jeannies-RTWUkay-Shop-104389068436589" target="_blank"><i class="fas fa-pager fa-2x"></i> Facebook Page</a>
+            <span><i class="fas fa-mobile-alt fa-2x"></i>+639097353351</span>
+        </section>
+    </footer>
+</body>
+
+</html>

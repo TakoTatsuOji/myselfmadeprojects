@@ -1,0 +1,45 @@
+/*********************
+    VARIABLES
+********************/
+
+
+/* primary */
+
+$pink: #fe2c85;
+$r-blue: #00cccc;
+$teal: #008080;
+$wysteria: #c9a0dc;
+
+/* neutral */
+
+$black: #111;
+$white: #fff;
+
+/*********************
+    BREAKPOINTS
+********************/
+
+@mixin breakpoint($point) {
+    @if $point==laptop {
+        @media (min-width: 1240px) {
+            @content;
+        }
+    }
+}
+
+
+/*********************
+    FONTS
+********************/
+
+@font-face {
+    font-family: 'Omori';
+    src: url(/fonts/omori_game2-webfont.ttf);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
