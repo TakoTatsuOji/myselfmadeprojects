@@ -320,12 +320,8 @@ article h2 {
   margin: 1.4rem 0;
   letter-spacing: 1px;
   text-align: center;
-  background-image: url(../img/shritpat.jpg);
-  background-position: center;
-  background-size: 100%;
-  background-clip: text;
-  color: transparent;
   position: relative;
+  color: #111;
 }
 
 article p {
@@ -333,6 +329,16 @@ article p {
   font-weight: 200;
   line-height: 1.563rem;
   font-size: 1.1rem;
+}
+
+@supports (background-clip: text) {
+  article h2 {
+    background-image: url(../img/shritpat.jpg);
+    background-position: center;
+    background-size: 100%;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 #about section {
