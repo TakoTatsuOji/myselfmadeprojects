@@ -7,13 +7,28 @@ let pressed = false,
 window.addEventListener('mouseup', () => {
     pressed = false;
 })
+window.addEventListener('touchend', () => {
+    pressed = false;
+})
+window.addEventListener('pointerup', () => {
+    pressed = false;
+})
 
 for (let i = 0; i < slider.length; i++) {
-    slider[i].addEventListener('mousedown', getXIfPressed);
-    slider[i].addEventListener('mouseenter', grabCursor)
-    slider[i].addEventListener('mouseup', grabCursor)
-    slider[i].addEventListener('mousemove', dragging)
 
+    if (window.PointerEvent) {
+        /* touch event for mobile */
+        slider[i].addEventListener('pointerdown', getXIfPressed, true)
+        slider[i].addEventListener('pointerenter', grabCursor);
+        slider[i].addEventListener('pointerup', grabCursor);
+        slider[i].addEventListener('pointermove', touchDragging, true)
+
+    } else {
+        slider[i].addEventListener('mousedown', getXIfPressed);
+        slider[i].addEventListener('mouseenter', grabCursor)
+        slider[i].addEventListener('mouseup', grabCursor)
+        slider[i].addEventListener('mousemove', dragging)
+    }
     // functions for their respective event
     function getXIfPressed(e) {
         e.preventDefault();
@@ -28,6 +43,16 @@ for (let i = 0; i < slider.length; i++) {
 
     function dragging(e) {
         e.preventDefault();
+
+        if (!pressed) return;
+
+        x = e.offsetX;
+        innerSlider[i].style.left = `${x - startX}px`;
+
+        boundary(i);
+    }
+
+    function touchDragging(e) {
         if (!pressed) return;
 
         x = e.offsetX;
