@@ -315,7 +315,7 @@ header nav .expand-menu-container.expanded .links {
 }
 
 article {
-  margin-bottom: 2.188rem;
+  margin-bottom: 1.788rem;
   overflow: hidden;
 }
 
@@ -415,7 +415,7 @@ article p {
   min-height: 250px;
   position: relative;
   overflow: hidden;
-  margin: 30px 0 50px;
+  margin: 50px 0 70px;
   -ms-touch-action: none;
       touch-action: none;
   overflow: hidden;
@@ -476,8 +476,6 @@ article p {
   -webkit-transition: 0s ease-in-out;
   transition: 0s ease-in-out;
   pointer-events: none;
-  -ms-touch-action: none;
-      touch-action: none;
 }
 
 .household .draggable-imgs img {
@@ -487,6 +485,10 @@ article p {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px;
+}
+
+.household:nth-last-child(1) {
+  margin: 50px 0 0;
 }
 
 .slide-bottom {

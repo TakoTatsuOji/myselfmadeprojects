@@ -221,7 +221,7 @@ header {
 }
 
 article {
-    margin-bottom: 2.188rem;
+    margin-bottom: 1.788rem;
     overflow: hidden;
     h2 {
         font-family: 'Josefin Sans', cursive;
@@ -300,7 +300,7 @@ article {
     min-height: 250px;
     position: relative;
     overflow: hidden;
-    margin: 30px 0 50px;
+    margin: 50px 0 70px;
     touch-action: none;
     overflow: hidden;
     &::before,
@@ -350,7 +350,6 @@ article {
         gap: 5px;
         transition: 0s ease-in-out;
         pointer-events: none;
-        touch-action: none;
         img {
             width: 100%;
             min-height: 250px;
@@ -359,6 +358,10 @@ article {
             border-radius: 15px;
         }
     }
+}
+
+.household:nth-last-child(1) {
+    margin: 50px 0 0;
 }
 
 //SLIDE BOTTOM ANIMATION
