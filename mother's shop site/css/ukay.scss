@@ -5,13 +5,17 @@
 }
 
 @import 'modules/bits';
+html,
+body {
+    overflow-x: hidden;
+}
+
 html {
     width: 100%;
     height: 100%;
     display: table;
     scroll-padding-top: 100px;
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 a {
@@ -21,10 +25,10 @@ a {
 
 body {
     width: 100%;
+    display: table-cell;
     box-sizing: border-box;
     font-family: 'Josefin Sans', 'Open Sans', sans-serif;
     background: url(../img/bg-main-mobile.jpg);
-    overflow-x: hidden;
 }
 
 
@@ -218,6 +222,7 @@ header {
 
 article {
     margin-bottom: 2.188rem;
+    overflow: hidden;
     h2 {
         font-family: 'Josefin Sans', cursive;
         font-weight: 600;
@@ -247,6 +252,7 @@ article {
 }
 
 #about {
+    overflow: hidden;
     section {
         margin: 0 1.875rem;
         text-align: center;
@@ -260,6 +266,7 @@ article {
 #contact {
     background: $pink;
     padding: 20px;
+    overflow: hidden;
     h2 {
         font-family: 'Josefin Sans', cursive;
         font-weight: 600;
@@ -294,6 +301,8 @@ article {
     position: relative;
     overflow: hidden;
     margin: 30px 0 50px;
+    touch-action: none;
+    overflow: hidden;
     &::before,
     &::after {
         content: '';

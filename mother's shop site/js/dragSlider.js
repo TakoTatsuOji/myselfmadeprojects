@@ -7,9 +7,7 @@ let pressed = false,
 window.addEventListener('mouseup', () => {
     pressed = false;
 })
-window.addEventListener('touchend', () => {
-    pressed = false;
-})
+
 window.addEventListener('pointerup', () => {
     pressed = false;
 })
@@ -21,7 +19,7 @@ for (let i = 0; i < slider.length; i++) {
         slider[i].addEventListener('pointerdown', getXIfPressed, true)
         slider[i].addEventListener('pointerenter', grabCursor);
         slider[i].addEventListener('pointerup', grabCursor);
-        slider[i].addEventListener('pointermove', touchDragging, true)
+        slider[i].addEventListener('pointermove', dragging, true)
 
     } else {
         slider[i].addEventListener('mousedown', getXIfPressed);
@@ -52,15 +50,6 @@ for (let i = 0; i < slider.length; i++) {
         boundary(i);
     }
 
-    function touchDragging(e) {
-        if (!pressed) return;
-
-        x = e.offsetX;
-        innerSlider[i].style.left = `${x - startX}px`;
-
-        boundary(i);
-    }
-
 }
 // check boundary
 function boundary(i) {
@@ -73,5 +62,4 @@ function boundary(i) {
     if (inner.right < outer.right) {
         innerSlider[i].style.left = `-${inner.width - outer.width}px`
     }
-
 }
