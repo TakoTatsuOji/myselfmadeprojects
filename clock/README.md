@@ -1,7 +1,7 @@
 # OMORI-styled clock site
 1st self made project
 
-link: https://t.co/0WVRvsoHX6?amp=1
+link: https://omori-clock.netlify.app/
 
 # Features(v1)
    1.) Included a certain ost "Dear Little Brother" for tunes;  
