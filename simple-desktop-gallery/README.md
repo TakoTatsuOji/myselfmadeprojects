@@ -1,3 +1,3 @@
 # non-mobile port gallery
 
-link: https://haeffy-desktop-gallery.netlify.app/
+link: https://haemoffy-desktop-gallery.netlify.app/
